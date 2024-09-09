@@ -1,4 +1,106 @@
-body{
-    margin: 0;
-    font-family: sans-serif;
+body {
+    margin: 0; /* Elimina el margen predeterminado del body para que la página comience desde el borde */
+    font-family: sans-serif; /* Define la fuente tipográfica del contenido del cuerpo */
+    display: flex; /* Activa Flexbox para la disposición de los elementos hijos */
+    flex-direction: column; /* Los hijos se colocan en una columna (uno debajo del otro) */
+    align-items: start; /* Alinea los elementos hijos al inicio en el eje transversal (horizontal) */
+    min-height: 100vh; /* Asegura que el body cubra al menos el 100% de la altura de la pantalla */
+}
+
+div, body, header, nav, ul, footer {
+    box-sizing: border-box; /* Cambia el modelo de caja para que el padding y el borde no aumenten el tamaño total del elemento */
+}
+
+.main_wrapper, header, footer {
+    width: 100%; /* Establece que estos elementos ocupen el 100% del ancho del contenedor */
+}
+
+/* header */
+
+.navbar {
+    margin: 0; /* Elimina cualquier margen alrededor del navbar */
+    display: flex; /* Activa Flexbox para el contenedor del navbar */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del navbar */
+    background-color: #07b; /* Define el color de fondo azul del navbar */
+    padding: 10px; /* Añade un espacio interno (padding) de 10px alrededor del contenido del navbar */
+    text-align: center; /* Centra el texto dentro de los elementos */
+    flex-wrap: wrap; /* Permite que los elementos del navbar se envuelvan en líneas si no caben en una sola fila */
+}
+
+.navbar li {
+    list-style: none; /* Elimina los puntos de las listas de navegación (elementos <li>) */
+    padding: 5px; /* Añade un espacio interno (padding) de 5px alrededor de los elementos <li> */
+}
+
+.navbar li a {
+    color: #fff; /* Establece el color del texto de los enlaces en blanco */
+    padding: 10px; /* Añade un espacio interno (padding) de 10px dentro de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* SECTION MAIN */
+
+.main_wrapper {
+    display: flex; /* Activa Flexbox para el contenedor principal */
+    flex-grow: 1; /* Permite que el contenedor principal crezca para llenar el espacio disponible */
+    flex-wrap: wrap; /* Permite que los elementos se distribuyan en varias filas si no caben en una */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del main_wrapper */
+    gap: 10px; /* Añade un espacio de 10px entre los elementos del contenedor */
+}
+
+aside, main {
+    padding: 10px 20px; /* Añade un espacio interno de 10px arriba/abajo y 20px a los lados */
+    flex-basis: 0; /* Define que la base de los elementos Flex es 0 para que Flexbox calcule el tamaño */
+    background-color: #fff; /* Establece el color de fondo blanco */
+}
+
+.main_wrapper aside {
+    flex-grow: 1; /* Permite que el <aside> crezca y ocupe más espacio disponible según sea necesario */
+}
+
+.secundary__navbar {
+    min-width: 10rem; /* Define un ancho mínimo de 10 rems para garantizar que no se reduzca demasiado */
+    text-align: center; /* Centra el contenido dentro de la barra de navegación secundaria */
+}
+
+.secundary__navbar ul {
+    padding: 0; /* Elimina el padding predeterminado de la lista no ordenada */
+}
+
+.secundary__navbar li {
+    list-style: none; /* Elimina los puntos de las listas para los elementos de la barra secundaria */
+}
+
+.secundary__navbar a {
+    color: #48e; /* Establece el color del texto de los enlaces en azul claro */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    display: inline-block; /* Permite que los enlaces sean tratados como bloques en línea */
+    padding: 5px 6px; /* Añade un espacio interno de 5px arriba/abajo y 6px a los lados dentro de los enlaces */
+}
+
+aside:last-child {
+    min-width: 10rem; /* Define un ancho mínimo de 10 rems para el último <aside> */
+    display: none; /* Inicialmente oculta el último <aside> */
+}
+
+@media screen and (min-width: 480px) {
+    aside:last-child {
+        display: block; /* Muestra el último <aside> en pantallas de al menos 480px de ancho */
+    }
+}
+
+@media screen and (min-width: 800px) { 
+    .main_wrapper {
+        flex-direction: row; /* Cambia la dirección de los elementos a fila en pantallas más anchas */
+    }
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo del contenedor */
+    padding: 40px; /* Añade un espacio interno de 40px alrededor del contenido del footer */
+    text-align: center; /* Centra el texto dentro del footer */
+    background-color: #333a; /* Establece el color de fondo del footer en gris con transparencia */
+    color: #fff; /* Define el color del texto en blanco */
+    font-weight: bold; /* Hace que el texto sea más grueso (negrita) */
+    border: 1px solid #333; /* Añade un borde sólido de 1px alrededor del footer con color gris oscuro */
 }
